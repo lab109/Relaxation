@@ -1,0 +1,2 @@
+CompileFlags:
+  Compiler: clang++               # Change argv[0] of compile flags to `clang++
