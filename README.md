@@ -2,14 +2,14 @@
 
 ## Как добавить в проект?
 
-```https
-git submodule add
+```sh
+git submodule add https://gitverse.ru/sc/lab109/Relaxation.git
 ```
 
 или
 
 ```sh
-git submodule add
+git submodule add ssh://git@gitverse.ru:2222/lab109/Relaxation.git
 ```
 
 В cmake проекте прописать
