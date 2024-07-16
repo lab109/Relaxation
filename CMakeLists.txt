@@ -9,6 +9,7 @@ endif()
 # =============================================
 
 add_library(relaxation STATIC)
+add_library(lab109::relaxation ALIAS relaxation)
 
 # =============================================
 
