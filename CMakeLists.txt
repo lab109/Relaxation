@@ -19,8 +19,7 @@ target_include_directories(
 # =============================================
 set_target_properties(
     relaxation
-    PROPERTIES LINKER_LANGUAGE Fortran
-               Fortran_STANDARD 2018
+    PROPERTIES Fortran_STANDARD 2018
                Fortran_STANDARD_REQUIRED on
                Fortran_EXTENSIONS off
 )
