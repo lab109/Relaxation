@@ -28,7 +28,7 @@ contains
       real(kind=c_double), intent(in)::thetta !< Характеристическая температура [K]
       real(kind=c_double), intent(in)::Tv     !< Поступательная или колебательная температура [K]
 
-      vibrational_energy = 1./(exp(thetta/Tv) - 1.)
+      vibrational_energy = real(kind=c_double,1.)/(exp(thetta/Tv) - real(kind=c_double,1.))
 
    end function vibrational_energy
 
@@ -48,7 +48,7 @@ contains
       real(kind=c_double), parameter::pa_to_atm = 9.86923266716013E-06     !& Атмосфер в одном паскале
       real(kind=c_double), parameter::mks_to_s  = 1e-6                     !& с в мкс
 
-      relaxation_time = mks_to_s*A*T**N*exp(B*T**(-1./3.))/P/pa_to_atm
+      relaxation_time = mks_to_s*A*T**N*exp(B*T**real(kind=c_double,-1./3.))/P/pa_to_atm
    end function relaxation_time
 
 end module relaxation

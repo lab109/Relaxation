@@ -14,7 +14,11 @@ git submodule add ssh://git@gitverse.ru:2222/lab109/Relaxation.git
 
 В cmake проекте прописать
 
-```
+```cmake
+set(CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/fortran_modules)
+
+target_include_directories(project_name PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/fortran_modules)
+...
 add_subdirectory(Relaxation)
 ...
 target_link_libraries(project_name PRIVATE lab109::relaxation)
@@ -26,7 +30,7 @@ target_link_libraries(project_name PRIVATE lab109::relaxation)
 
 Входные данные:
 
-```f08
+```Fortran
 real(kind=c_double), intent(in)::e      !< Колебательная энергия молекулы [-]
 real(kind=c_double), intent(in)::e0     !< Равновесная колебательная энергия молекулы [-]
 real(kind=c_double), intent(in)::ed     !< Энергия диссоциации молекулы [K]
@@ -40,7 +44,7 @@ real(kind=c_double), intent(in)::dx_dt  !< Изменение мольных к�
 
 Входные данные:
 
-```f08
+```Fortran
 real(kind=c_double), intent(in)::thetta !< Характеристическая температура [K]
 real(kind=c_double), intent(in)::Tv     !< Поступательная или колебательная температура [K]
 ```
@@ -49,7 +53,7 @@ real(kind=c_double), intent(in)::Tv     !< Поступательная или �
 
 Входные данные:
 
-```f08
+```Fortran
 real(kind=c_double), intent(in)::A  !< Коэффицент уравнения A [?]
 real(kind=c_double), intent(in)::B  !< Коэффициент уравнения B [?]
 real(kind=c_double), intent(in)::N  !< Коэффициент уравнения N [-]
