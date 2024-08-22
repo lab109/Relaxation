@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.29 FATAL_ERROR)
 
-project(relaxation LANGUAGES Fortran)
+project(relaxation LANGUAGES Fortran C)
 
 if(CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(CMAKE_EXPORT_COMPILE_COMMANDS)
@@ -22,6 +22,9 @@ set_target_properties(
     PROPERTIES Fortran_STANDARD 2018
                Fortran_STANDARD_REQUIRED on
                Fortran_EXTENSIONS off
+               C_STANDARD 17
+               C_STANDARD_REQUIRED on
+               C_EXTENSIONS off
 )
 
 # =============================================
