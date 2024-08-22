@@ -1,2 +1,2 @@
 
-target_sources(relaxation PRIVATE relaxation.f08)
+target_sources(relaxation PRIVATE relaxation.f08 PUBLIC relaxations.h)
